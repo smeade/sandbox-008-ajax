@@ -1,8 +1,10 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= review.title %></h3>
+<% unless review.body.blank? %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= review.title %></h3>
+    </div>
+    <div class="panel-body">
+      <%= review.body %>
+    </div>
   </div>
-  <div class="panel-body">
-    <%= review.body %>
-  </div>
-</div>
+<% end %>

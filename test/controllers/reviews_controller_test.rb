@@ -21,7 +21,7 @@ class ReviewsControllerTest < ActionController::TestCase
       post :create, review: { body: @review.body, product_id: @review.product_id, title: @review.title }
     end
 
-    assert_redirected_to review_path(assigns(:review))
+    assert_redirected_to product_path(assigns(:review).product)
   end
 
   test "should show review" do
