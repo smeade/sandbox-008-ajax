@@ -32,7 +32,7 @@
         <td><%= product.active %></td>
         <td><%= product.available_on %></td>
         <td>
-          <%= render partial: 'reviews/reviews', locals: {reviews: product.reviews, product_id: product.id} %>
+          <%= render partial: 'reviews/reviews', locals: {reviews: product.reviews, product: product} %>
           <b><%= link_to 'Reviews', '#', data: {toggle: "modal", target:"#product-#{product.id}-reviews" } %></b>
         </td>
         <td><%= link_to 'Add Review', product %></td>
