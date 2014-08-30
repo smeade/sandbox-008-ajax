@@ -15,6 +15,13 @@ Demo Heroku app is [here](http://sandbox-008-ajax.herokuapp.com/).
 
 ## Notes
 
+Demonstrates dynamic creation of modals upon demand, vs. loading up multiple modals waiting to be revealed.
+
+In an initial version/commit, a modal dialog is created for each product listed in /products. A product's "reviews" modal dialog is revealed upon clicking
+the 'Reviews' link for that product. This results in multiple, unnecessary and mostly un-viewed modals rendered on the page; killing page load times.
+
+A future commit will replace that with Ajax generation of the modal upon clicking the 'Reviews' link (and then perhaps right before based on hover).
+
 ## Getting Started
 
 1. Install gems:
@@ -35,6 +42,8 @@ Demo Heroku app is [here](http://sandbox-008-ajax.herokuapp.com/).
 
 5. Using a browser, go to [http://localhost:3000](http://localhost:3000) and you'll see:
 "Listing products"
+
+6. Create some Products and Reviews.
 
 ## Running the test suite
 

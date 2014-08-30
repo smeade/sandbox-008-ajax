@@ -1,10 +1,11 @@
 class ReviewsController < ApplicationController
+  before_action :set_product, only: [:index]
   before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = Review.all
+    @reviews = @product.blank? ? Review.all : Product.find(params[:product_id]).reviews
   end
 
   # GET /reviews/1
@@ -62,6 +63,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+    def set_product
+      @product = Product.find(params[:product_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_review
       @review = Review.find(params[:id])
