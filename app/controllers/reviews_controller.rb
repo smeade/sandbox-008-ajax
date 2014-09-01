@@ -6,6 +6,10 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   def index
     @reviews = @product.blank? ? Review.all : Product.find(params[:product_id]).reviews
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
   end
 
   # GET /reviews/1

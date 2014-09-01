@@ -1,0 +1,6 @@
+if ( $("#product-<%= @product.id %>-reviews").length ) {
+  $("#product-<%= @product.id %>-reviews").modal();
+} else {
+  $("<%= escape_javascript(render partial: 'reviews/reviews', locals: {reviews: @product.reviews, product: @product}) %>").appendTo("#reviews");
+  $("#product-<%= @product.id %>-reviews").modal();
+}
